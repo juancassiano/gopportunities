@@ -5,8 +5,10 @@ import (
 	"github.com/juancassiano/gopportunities/handler"
 )
 
-func initializeRoutes(router *gin.Engine){
-	v1 :=router.Group("/api/v1")
+func initializeRoutes(router *gin.Engine) {
+	//Initialize Handler
+	handler.InitializeHandler()
+	v1 := router.Group("/api/v1")
 	{
 		v1.GET("/opening", handler.ShowOpeningHandler)
 		v1.POST("/openings", handler.CreateOpeningHandler)
